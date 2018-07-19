@@ -21,7 +21,7 @@ const initialState = [
 const PostReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_POSTS:
-      return state;
+      return action.posts;
     default:
       return state;
   }

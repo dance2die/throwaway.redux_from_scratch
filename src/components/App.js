@@ -7,12 +7,20 @@ const App = ({ posts }) => {
   //   <Posts posts={posts} />
   return (
     <div>
-      <h1>Posts</h1>
+      <h1>Post count: {posts.length}</h1>
+      <ul style={{ listStyle: "none" }}>
+        {posts.map(post => (
+          <li>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default App;
+// export default App;
 
-// const mapStateToProps = state => ({ posts: state.posts });
-// export default connect(mapStateToProps)(App);
+const mapStateToProps = state => ({ posts: state.posts });
+export default connect(mapStateToProps)(App);
